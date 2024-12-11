@@ -5,7 +5,6 @@ const wss = new WebSocket.Server({ port: 8080 });
 wss.on("connection", (ws) => {
   console.log("Новый клиент подключен");
 
-  // Запрашиваем имя пользователя
   ws.send(JSON.stringify({ type: "nameRequest" }));
 
   ws.on("message", (message) => {
